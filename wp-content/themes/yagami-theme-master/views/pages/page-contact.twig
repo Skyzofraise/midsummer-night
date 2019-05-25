@@ -1,0 +1,32 @@
+{% extends 'layout.twig' %}
+{% block content %}
+    <div id="page-contact">
+
+        {#
+        |
+        | Section Banner
+        |-----------------
+        #}
+        {{ global.banner({
+            'title': post.title,
+            'image': img ~ '/global/theme-lg.jpg'
+        }) }}
+
+        {#
+        |
+        | Section Map
+        |--------------
+        #}
+        <div class="section section-map">
+            <div class="container-fluid">
+                <div id="map">
+                    {% set marker = post.get_field('contact_map') %}
+                    <div class="marker" data-icon="{{ img }}/icon/marker.svg" data-lat="{{ marker.lat }}" data-lng="{{ marker.lng }}">
+                        <div>{{ marker.address }}</div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

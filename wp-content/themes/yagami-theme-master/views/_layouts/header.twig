@@ -1,0 +1,27 @@
+{#
+|
+| Header
+|---------
+#}
+<header style="z-index: 2;" class="header py-sm w-100 p-a fs-sm">
+    <div class="container d-f jc-end">
+        {% block nav %}
+            <nav>
+                <ul class="mr-sm-child-not-last">
+                    {% for item in menu.primary.get_items %}
+                        <li class="d-ib {{ item.classes | join(' ') }}">
+                            <a class="link-white" href="{{item.link}}">{{item.title}}</a>
+                            {% if item.get_children %}
+                                <ul class="nav-drop">
+                                    {% for child in item.get_children %}
+                                    <li><a href="{{child.link}}">{{child.title}}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        {% endblock %}
+    </div>
+</header>

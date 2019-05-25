@@ -1,0 +1,21 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+	{#
+    |
+    | Tpl CMS
+    |---------------
+    #}
+	<div id="page-cms">
+
+        {#
+        |
+        | Section Banner
+        |-----------------
+        #}
+        {{ global.banner({
+            'title': post.title,
+            'image': img ~ '/global/theme-lg.jpg'
+        }) }}
+    </div>
+{% endblock %}

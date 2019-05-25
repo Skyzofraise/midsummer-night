@@ -1,0 +1,242 @@
+/*
+|--------------------
+|      CONTENT
+|--------------------
+*/
+
+/*
+|
+| Banner
+|---------
+*/
+.banner{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-attachment: scroll;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
+    background-color: $black;
+
+    .item-title{
+        line-height: 1.2;
+    }
+    .item-subtitle{
+        font-family: $font-family-default;
+    }
+
+    .item-content{
+        width: 100%;
+    }
+}
+
+
+/*
+|
+| Container
+|------------
+*/
+.custom-container{
+    position: relative;
+    margin-top: $xxl;
+    @include media-breakpoint-down(lg) {
+        margin-top: 80px;
+    }
+    @include media-breakpoint-down(sm) {
+        margin-top: 0;
+    }
+}
+
+
+
+/*
+|
+| Custom card
+|--------------
+*/
+.custom-card{
+    position: relative;
+    z-index: 0;
+    height: 100%;
+    transition: all 0.3s ease;
+    &> a{
+        height: inherit;
+    }
+    &::after{
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: $dark-taupe;
+        position: absolute;
+        bottom: -5px;
+        right: -5px;
+        z-index: -1;
+        transition: all 0.3s ease;
+    }
+    &::before{
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: $dark-taupe;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 0.3s ease;
+    }
+    &:hover{
+        transform: translateX(4px) translateY(4px);
+        &::after{
+            bottom: -1px;
+            right: -1px;
+        }
+        &::before{
+            top: -1px;
+            left: -1px;
+        }
+    }
+    .item-img{
+        @extend .bg-cover;
+        width: 100%;
+        height: 200px;
+    }
+
+    .item-content{
+        position: relative;
+        height: calc(100% - 200px);
+        z-index: 1;
+        padding: 15px 30px;
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        a{
+            align-self: flex-start;
+        }
+    }
+}
+
+.last-item{
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+}
+
+
+/*
+|
+| Cookie banner
+|----------------
+*/
+.cookie-banner {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 0;
+
+    .item-close {
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+
+    @include media-breakpoint-down(sm) {
+        padding: 20px 0;
+        font-size: 12px;
+    }
+
+    @include media-breakpoint-down(xs) {
+        padding: 10px 0 20px 0;
+
+        .item-close {
+            font-size: 18px;
+        }
+    }
+}
+
+
+
+/*
+|
+| Text
+|-------
+*/
+.text{
+    font-size: $sm;
+    line-height: 1.875em;
+    p{
+        margin-bottom: 20px;
+    }
+}
+
+
+
+/*
+|
+| Links
+|--------
+*/
+a{
+    text-decoration: none;
+}
+.text a,
+.custom-link{
+    padding: 0 8px;
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:before{
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 2px;
+        background-color: $dark-taupe;
+        transition: all 0.3s ease;
+    }
+    &:hover{
+        &:before{
+            width: 100%;
+        }
+    }
+}
+.text a:not(.custom-link){
+    padding: 0;
+    &:before{
+        height: 2px;
+        width: 100%;
+    }
+    &:hover{
+        &:before{
+            height: 100%;
+        }
+    }
+}
+
+
+/*
+|
+| pattern background
+|---------------------
+*/
+.pattern-b{
+    background-image: url('../img/global/pattern.png');
+    background-position: bottom center;
+    background-repeat: repeat-x;
+    background-size: contain;
+}

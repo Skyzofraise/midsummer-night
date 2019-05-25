@@ -1,0 +1,54 @@
+/*
+|--------------------
+|      BUTTONS
+|--------------------
+*/
+
+#sb_instagram #sbi_load{
+	text-align: left!important;
+} 
+.sbi_follow_btn{
+	a{
+		margin-left: 5px;
+		color: $dark-grey!important;
+		background-color: transparent!important;
+		border: 0;
+		padding: 0 10px;
+		font-size: 16px!important;
+		@extend .custom-link;
+	}
+}
+
+.btn-custom{
+	position: relative;
+	@extend .btn;
+	border: 1px solid $dark-taupe;
+	span{
+		position: relative;
+		z-index: 1;
+		transition: all 0.8s ease;
+		font-family: $font-family-custom;
+		color: $dark-taupe;
+		font-size: 16px;
+	}
+	&::before{
+		content: "";
+		display: block;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 2px;
+		height: 100%;
+		background-color: $dark-taupe;
+		z-index: 0;
+		transition: all 0.8s ease;
+	}
+	&:hover{
+		&::before{
+			width: 100%;
+		}
+		span{
+			color: $white;
+		}
+	}
+}

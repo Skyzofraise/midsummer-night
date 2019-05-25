@@ -1,0 +1,107 @@
+{#
+|
+| Pagination
+|-------------
+#}
+{% macro pagination(params) %}
+	{% set pagination = params.pagination %}
+
+	<ul class="pagination-container">
+		{% if pagination.prev %}
+			{% set link = pagination.prev.link %}
+			<li class="d-ib mr-sm"><a href="{{ link }}">Prev</a></li>
+		{% endif %}
+		{% for page in pagination.pages %}
+			<li class="d-ib mr-sm">
+				{% if page.link %}
+					<a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
+				{% else %}
+					<span class="{{ page.class }}">{{ page.title }}</span>
+				{% endif %}
+			</li>
+		{% endfor %}
+		{% if pagination.next %}
+			{% set link = pagination.next.link %}
+			<li class="d-ib mr-sm"/><a href="{{ link }}">Next</a></li>
+		{% endif %}
+	</ul>
+{% endmacro %}
+
+
+{# 
+|
+| Card block
+|-------------
+#}
+{% macro card(params) %}
+	{% set link    = params.link %}
+	{% set image   = params.image %}
+	{% set date    = params.date %}
+	{% set title   = params.title %}
+	{% set content = params.content %}
+	{% set terms   = params.terms %}
+
+    
+    	<div class="custom-card">
+            <a href="#">
+            <div class="item-img bg-cover" style="background-image: url('{{ image }}')"></div>
+    		<div class="item-content">
+                <div class="item-text-container">
+                    <span class="c-dark-taupe fs-xs">{{ date }}</span>
+
+                    <div class="mb-sm c-dark-taupe"></div>
+
+                    <h3 class="title-sm mb-xs c-dark-taupe">{{ title }}</h3>
+
+                    <div class="mb-md">{{ content|raw }}</div>
+                </div>
+                <div> <span class="custom-link" href="{{ link }}">Lire plus</span></div>
+    		</div>
+            </a>
+    	</div>
+    
+{% endmacro %}
+
+
+{# 
+|
+| Banner
+|---------
+#}
+{% macro banner(params) %}
+    {% set classes = params.classes  %}
+    {% set image   = params.image  %}
+    {% set title   = params.title  %}
+    {% set subtitle   = params.subtitle  %}
+    {% set content = params.content %}
+    {% set content = params.content %}
+
+    <section class="banner {{ classes }}" style="background-image: url('{{ image }}')">
+        <div class="overlay"></div>
+        <div class="item-content">
+            <div class="container">
+            	<div class="row">
+            		<div class="col-lg-8">
+            			<h1 class="title-xxl item-title c-white mb-sm">{{ title }}</h1>
+            		</div>
+            		<div class="col-lg-8">
+            			<h2 class="title-md item-subtitle c-white">{{ subtitle }}</h2>
+            		</div>
+            	</div>
+                
+                
+                <div class="c-white">
+                    <!-- <div class="fs-xl mb-sm">
+                        <i class="fab fa-wordpress"></i>
+                    </div> -->
+                    <!-- <div class="d-f jc-center">
+                        <form style="width: 280px;" role="search" method="get" class="search-form d-f" action="{{ function('home_url', '/') }}">
+                            <input type="search" class="form-control search-field" placeholder="Type something..." value="{{ function('get_search_query') }}" name="s"/>
+                            <input class="search-submit btn-grey btn btn-sm" type="submit" value="Search"/>
+                        </form>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+{% endmacro %}

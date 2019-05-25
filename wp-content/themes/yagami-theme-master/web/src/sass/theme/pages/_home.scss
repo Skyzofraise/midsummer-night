@@ -1,0 +1,168 @@
+/*
+|--------------------
+|     PAGE HOME
+|--------------------
+*/
+
+#page-home{
+
+	.presentation{
+		.title-transparent{
+			top: -25%;
+			@include media-breakpoint-down(md) {
+		        top: -20%;
+		        text-align: left;
+		    }
+		}
+		&-image{
+			height: 100%;
+		}
+	}
+
+	.chatons{
+		padding: 80px 0;
+	    &-text{
+	    	@include media-breakpoint-down(md) {
+		        margin-top: $md;
+		    }
+	    	@include media-breakpoint-down(sm) {
+		        text-align: center;
+		    }
+	    }
+		.item{
+			width: 100%;
+			position: relative;
+			
+			&-image{
+				height: 300px;
+				@include media-breakpoint-down(sm) {
+			        height: 300px;
+			    }
+			}
+			&-text{
+				position: relative;
+				padding-left: 0;
+				transition: all 0.3s ease;
+				
+				&:before{
+					content: "";
+					display: block;
+					left: 0;
+					top: 0;
+					width: 0;
+					height: 100%;
+					position: absolute;
+					background-color: $dark-taupe;
+					transition: all 0.3s ease;
+				}
+				@include media-breakpoint-down(sm) {
+			        text-align: center;
+			    }
+			}
+			&-icon{
+				opacity: 0.2;
+				color: $white;
+				font-size: 20px;
+				position: absolute;
+				left: 5px;
+				top: 50%;
+				margin-top: -10px;
+				transition: all 0.3s ease;
+			}
+
+			&:hover{
+				.item-text{
+					padding-left: 40px;
+					&:before{
+						width: 30px;
+					}
+				}
+				.item-icon{
+					opacity: 1;
+				}
+			}
+		}
+		
+	}
+
+
+	.views{
+		padding: 110px 0 80px;
+		@include media-breakpoint-down(md) {
+		    padding:  40px 0;
+	    }
+		.item-text{
+			font-family: $font-family-custom;
+			font-size: 16px;
+			line-height: 1.875;
+			@include media-breakpoint-down(md) {
+			    text-align: center;
+			    font-size: 14px;
+		    }
+		}
+		.item-name{
+			font-family: $font-family-custom;
+			font-size: 16px;
+			text-align: right;
+			color: $dark-taupe;
+			@include media-breakpoint-down(md) {
+		        font-size: 14px;
+		    }
+		}
+		.quote{
+			font-size: 200px;
+			color: $dark-taupe;
+			font-family: $font-family-custom;
+			line-height: 0;
+			position: absolute;
+			opacity: 0.3;
+			@include media-breakpoint-down(md) {
+		        font-size: 120px;
+		    }
+			&-left{
+				left: 0;
+				top: 20%;
+				@include media-breakpoint-down(sm) {
+			        top: 40px;
+			    }
+			}
+			&-right{
+				right: 0;
+				bottom: 5%;
+			}
+		}
+	}
+
+	.cta{
+		.custom-container{
+			margin-top: 80px;
+			@include media-breakpoint-down(sm) {
+		        margin-top: 0;
+		    }
+		}
+		.title-transparent{
+			@include media-breakpoint-down(md) {
+		        display: none;
+		    }
+		}
+	}
+
+
+	.swiper-button-prev,
+	.swiper-button-next{
+		width: 100px;
+		background-size: contain;
+	}
+	.swiper-button-prev{
+		left: 0;
+		background-image: url("../img/icon/left-arrow.png") !important;
+		@include media-breakpoint-down(md) {
+	        left: 15px;
+	    }
+	}
+	.swiper-button-next{
+		right: 15px;
+		background-image: url("../img/icon/right-arrow.png") !important;
+	}
+
+}

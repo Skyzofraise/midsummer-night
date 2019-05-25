@@ -1,0 +1,49 @@
+.page-loader{
+
+	width: 100vw;
+	height: 100vh;
+
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	left: 0;
+
+	background-color: $dark-taupe;
+	background-image: url('../img/global/pattern-reverse.png');
+	background-position: bottom center;
+    background-repeat: repeat-x;
+    background-size: contain;
+
+	color: $white;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.title-container{
+		
+		.first-line{
+			transform: translateY(40px);
+			opacity: 0;
+		}
+		.second-line{
+			opacity: 0;
+		}
+		p{
+			line-height: 1;
+		}
+	}
+
+	.line{
+		width: 0;
+		height: 2px;
+		background-color: $white;
+		margin: 0 auto;
+		transform: translateY(-100px);
+	}
+
+	.text-element{
+		display: none;
+	}
+	
+}

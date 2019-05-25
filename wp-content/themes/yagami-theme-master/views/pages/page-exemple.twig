@@ -1,0 +1,15 @@
+{% extends 'layout.twig' %}
+{% block content %}
+    <div id="page-exemple">
+
+        {#
+        |
+        | Section Banner
+        |-----------------
+        #}
+        {{ global.banner({
+            'title': post.title,
+            'image': img ~ '/global/theme-lg.jpg'
+        }) }}
+    </div>
+{% endblock %}

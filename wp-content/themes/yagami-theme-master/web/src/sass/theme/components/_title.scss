@@ -1,0 +1,39 @@
+.title-vertical{
+	width: 100%;
+	display: inline-block;
+	transform: rotate(-90deg);
+	transform-origin: top;
+	white-space: nowrap;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	@include media-breakpoint-down(md) {
+        transform: rotate(0);
+        position: relative;
+    }
+}
+.title-transparent{
+	opacity: 0.4;
+	position: absolute;
+	top: -20%;
+	left: 0;
+	font-size: 200px;
+	font-weight: 700;
+	font-family: $font-family-custom;
+	line-height: 1;
+	width: 100%;
+	@include media-breakpoint-down(md) {
+		font-size: 160px;
+		top: -12%;
+    }
+    @include media-breakpoint-down(sm) {
+        font-size: 28px;
+        position: relative;
+        opacity: 1;
+        font-weight: 500;
+    }
+    &-right{
+    	right: 0;
+    	left: auto;
+    }
+}

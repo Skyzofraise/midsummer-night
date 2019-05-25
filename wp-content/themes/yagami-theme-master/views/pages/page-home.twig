@@ -1,0 +1,257 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+    <div id="page-home">
+
+        {#
+        |
+        | Section Banner
+        |-----------------
+        #}
+        {{ global.banner({
+            'title': site.title,
+            'subtitle' : site.description,
+            'image': img ~ '/global/theme-lg.jpg'
+        }) }}
+
+
+
+        {#
+        |
+        | Section présentation
+        |-----------------------
+        #}
+        <section class="section presentation">
+            <div class="container custom-container">
+                <div class="title-transparent c-taupe ta-r mb-md">
+                    Chatterie
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-hidden">
+                        <div class="presentation-image bg-cover" style="background-image:url('https://scontent.fcdg1-1.fna.fbcdn.net/v/t1.0-9/28378565_1836001613160424_8218296784439406670_n.jpg?_nc_cat=105&_nc_ht=scontent.fcdg1-1.fna&oh=b1822c868520aa2064ed871516c0af22&oe=5D678057')">
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="text mb-md">
+
+                            <p>Nous sommes heureux de vous présenter notre petit élevage familial consacré à cette belle race, le British Shorthair qui force le respect et l'admiration. A travers ce site nous souhaitons partager avec vous notre passion pour ce chat majestueux.</p>
+
+                            <p>Nos chats ont été sélectionnés pour leur bonne santé et leur caractère équilibré ainsi que leur beauté. Notre but est d'élever des chats conformes au standard de la race du British Shorthair.</p>
+
+                            <p>Nos British viennent de lignées prestigieuses soigneusement choisies. Ils sont essentiellement de couleur bleu et lilac en uni, bicolore et tortie. Nous espérons aussi introduire la robe Tabby dans notre élevage. En même temps, nous accordons une place importante à nos chatons, à leur suivi et à leur sociabilisation pour en faire des chats sains, affectueux et confiants. Nous aurons le plaisir de vous conseiller et de répondre à vos questions.</p>
+
+                            <p>Notre chatterie est située à Vincennes en Ile de France.</p>
+                        </div>
+                        <div class="instagram mt-md">
+                            {{ function('do_shortcode', '[instagram-feed]') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+
+        {#
+        |
+        | Section Chatons
+        |------------------
+        #}
+        <section class="chatons bg-light-taupe">
+            
+            <div class="container custom-container">
+
+                <div class="title-transparent c-taupe">
+                    Chatons
+                </div>
+
+                <div class="row">
+                    <div class="offset-lg-2 col-lg-8">
+                        <p class="chatons-text text mb-lg">
+                            La chatterie Midsummer Night a l'immense joie de vous présenter sa portée du <b>26 avril 2019</b> de 5 <b>Scottish</b>. Venez admirer leurs bouilles et qui sait, avoir un coup de coeur? <br />
+                            Pour plus d'informations, n'hésitez pas à consulter nos <a href="">conditions d'adoption</a> ou à nous <a href="">contacter.</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-2 p-r">
+                        <h3 class="title-xl title-vertical c-dark-taupe pb-sm">Dernière portée —</h3>
+                    </div>
+
+                    <div class="col-lg-10">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+
+                                {% for item in 0..6 %}
+                                    <div class="swiper-slide">
+                                        <a href="" class="item c-dark-grey">
+                                            <div class="item-image bg-cover" style="background:url('https://static.boredpanda.com/blog/wp-content/uploads/2019/01/maine-coon-kittens-111-5c35a6fa4a78e__700.jpg')">
+                                                
+                                            </div>
+                                            <div class="item-text">
+                                                <p class="item-name title-md pt-sm pb-xs fs-md c-dark-taupe">Nom du chaton</p>
+                                                <p class="item-reserve c-dark-grey">À adopter</p>
+                                                <div class="item-icon">
+                                                    <i class="far fa-heart"></i>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                {% endfor %}
+                                
+                                <div class="swiper-slide">
+                                    <a href="" class="item">
+                                        <div class="item-image bg-cover" style="background:url('https://static.boredpanda.com/blog/wp-content/uploads/2019/01/maine-coon-kittens-111-5c35a6fa4a78e__700.jpg')">
+                                            
+                                        </div>
+                                        <div class="item-text">
+                                            <p class="item-name title-md pt-sm pb-xs fs-md c-dark-taupe">Nom du chaton</p>
+                                            <p class="item-reserve c-grey">Réservé</p>
+                                            <div class="item-icon">
+                                                <i class="far fa-heart"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-md">
+                    <div class="col-lg-3 offset-lg-9">
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        {#
+        |
+        | Section quote
+        |----------------
+        #}
+
+        <section class="views ">
+            <div class="container p-r">
+                <div class="row">
+                    <div class="col-lg-2 p-r">
+                        <h3 class="title-xl title-vertical c-dark-taupe pb-sm ">Livre d'or —</h3>
+                    </div>
+                    <div class="col-md-1">
+                        <p class="quote quote-left">“</p>
+                    </div>
+                    <div class="col-lg-8 col-md-10">
+                        <div class="swiper-container views-container mb-md">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide py-md">
+                                    <p class="item-text text c-dark-grey">
+                                        La chatterie Midsummer Night, c'est une éleveuse humaine qui s'assure du bonheur de ses chats avant tout. Elle est de bon conseil et toujours présente pour répondre à la moindre question, ainsi que très carrée dans ses démarches. Pauline vous fera changer d'avis sur les chatteries par l'amour et le bien être qu'elle souhaite apporter à chaque chaton qui est aimé et choyé comme un membre de sa famille à part entière, ça n'a rien à voir avec l'idée que l'on peut se faire d'un élevage. N'hésitez plus, votre chaton sera bien dans ses pattes et dans son poil. 
+                                    </p>
+                                    <p class="item-name mt-sm">— <b>Lolita Grasset</b>, maîtresse d'Occulte Monsieur Chat</p>
+                                </div>
+                                <div class="swiper-slide py-md">
+                                    <p class="item-text text c-dark-grey">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dolor quos cum nesciunt, asperiores, laudantium placeat iusto, consectetur similique architecto esse libero id recusandae ullam tenetur rem quia, nihil eius.
+                                    </p>
+                                    <p class="item-name mt-sm">— <b>Lolita Grasset</b>, maîtresse d'Occulte Monsieur Chat</p>
+                                </div>
+                                <div class="swiper-slide py-md">
+                                    <p class="item-text text c-dark-grey">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dolor quos cum nesciunt, asperiores, laudantium placeat iusto, consectetur similique architecto esse libero id recusandae ullam tenetur rem quia, nihil eius. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae ullam repellat tempora ipsa vel assumenda et necessitatibus, ab ex atque numquam corporis quasi excepturi, nihil doloribus consequuntur itaque nulla. Obcaecati.
+                                    </p>
+                                    <p class="item-name mt-sm">— <b>Lolita Grasset</b>, maîtresse d'Occulte Monsieur Chat</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <p class="quote quote-right">”</p>
+                    </div>
+                </div>
+                <div class="row mt-md">
+                    <div class="col-lg-3 offset-lg-9">
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        {#
+        |
+        | Section news
+        |---------------
+        #}
+        <section class="section news bg-light-taupe">
+            <div class="container custom-container">
+                <div class="title-transparent c-taupe">
+                    Actus
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <p class="text mb-lg mt-md">
+                            La chatterie Midsummer Night a une vie plutôt bien remplie, entre chats, lapin, chiens et enfants... Il y a de quoi tenir un blog! 
+                            Vous pouvez également retrouver ces événements sur <a href="">Instagram</a> et <a href="">Facebook</a>.
+                        </p>
+                    </div>
+                </div>
+                        
+                <div class="row loaded-posts mb-md-child">
+                    {% set var = 0 %}
+                    {% for key, value in posts %}
+                    {% set var = var + 1 %}
+                        <div class="col-lg-4 col-md-6 {% if var == 3 %}last-item{% endif %}">
+                            {{ global.card({
+                                'image'  : value.thumbnail.src,
+                                'terms'  : value.get_terms('category'),
+                                'title'  : value.title,
+                                'date'   : value.date|date('F Y')|capitalize,
+                                'content': value.content|truncate(20, true),
+                                'link'   : value.link
+                            }) }}
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="ta-c">
+                    <a href="" class="custom-link mt-md"><span>Voir tous nos articles</span></a>
+                </div>
+            </div>
+        </section>
+
+
+
+        {#
+        |
+        | Section cta
+        |--------------
+        #}
+        <section class="section cta">
+            <div class="container custom-container ta-c">
+                <div class="title-transparent c-taupe ta-c">
+                    Question
+                </div>
+                <div class="title-lg c-dark-taupe mb-md">Une question ?</div>
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <p class="text">Nous serons ravis de pouvoir vous renseigner sur notre élevage, nos conditions d'adoption ainsi que nos chatons.</p>
+                        <a href="" class="btn btn-custom mt-lg"><span>Contacter la Chatterie</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+{% endblock %}

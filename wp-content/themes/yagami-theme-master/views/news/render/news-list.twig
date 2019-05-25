@@ -1,0 +1,14 @@
+{% import '_macros/global.twig' as global %}
+
+{% for key, value in posts %}
+    <div class="col-sm-4">
+        {{ global.card({
+            'image'  : img ~ '/global/theme-sm.jpg',
+            'terms'  : value.get_terms('category'),
+            'title'  : value.title,
+            'date'   : value.date|date('F Y')|capitalize,
+            'content': value.content|truncate(20, true),
+            'link'   : value.link
+        }) }}
+    </div>
+{% endfor %}

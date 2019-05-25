@@ -1,0 +1,19 @@
+//Base
+@import 'base/fonts';
+@import 'base/default';
+
+//Layout
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/content';
+
+//Pages
+@import 'pages/home';
+@import 'pages/contact';
+
+//Components
+@import 'components/buttons';
+@import 'components/smooth-scrollbar';
+@import 'components/smooth-scrolling';
+@import 'components/title';
+@import 'components/page-loader';
