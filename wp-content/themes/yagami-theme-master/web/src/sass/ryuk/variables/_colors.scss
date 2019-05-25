@@ -1,0 +1,66 @@
+/*
+|---------------------------------------------------------------
+| COLORS
+|---------------------------------------------------------------
+| Define colors
+|
+|
+*/
+
+/*
+|
+| Colors declaration
+|----------------------
+|
+*/
+$black:           		#000000;
+$very-dark-grey:  		#212121;
+$dark-grey:       		#424242;
+$grey:            		#999;
+$light-grey:      		#dedede;
+$very-light-grey: 		#fafafa;
+$white:           		#FFFFFF;
+$white-opacity:   		rgba(255, 255, 255, 0.8);
+$black-opacity:   		rgba(0, 0, 0, 0.6);
+$taupe:			  		    #dacfd0;
+$light-taupe:     		#dacfd01a;
+$dark-taupe:	  		  #b9a4a6;
+$dark-taupe-opacity:	rgba(darken($taupe, 10%), 0.1);
+
+
+/*
+|
+| Assign colors
+|---------------
+|
+*/
+$border-color:                  $grey;
+$text-color:                    $dark-grey;
+$default-background-overlay:    $dark-taupe-opacity;
+
+
+/*
+|-------------
+| Colors map 
+|-------------
+| - How to use: add lines to create more "color classes" 
+| - Generated classes: .bg-{color} & .color-{color}
+|
+*/
+$colors : (
+  //Required colors
+  'black'          		: $black,
+  'very-dark-grey' 		: $very-dark-grey,
+  'dark-grey'      		: $dark-grey,
+  'grey'           		: $grey,
+  'light-grey'     		: $light-grey,
+  'very-light-grey'		: $very-light-grey,
+  'white'          		: $white,
+  'taupe'		   		: $taupe,
+  'light-taupe'	   		: $light-taupe,
+  'dark-taupe'			: $dark-taupe,
+  'dark-taupe-opacity'  : $dark-taupe-opacity
+);
+
+
+

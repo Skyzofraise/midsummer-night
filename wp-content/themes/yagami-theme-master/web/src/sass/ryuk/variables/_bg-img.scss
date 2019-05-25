@@ -1,0 +1,44 @@
+/*
+|---------------------------------------------------------------
+| BUTTONS
+|---------------------------------------------------------------
+| Generate and set buttons
+|
+|
+*/
+
+/*
+|
+| Bg img default
+|----------------------
+|
+*/
+
+$bg-img-default : (
+    width: 100%,
+    background-size: cover,
+    background-position: center center,
+    background-repeat: no-repeat
+);
+
+/*
+|-------------------
+| Bg img creation
+|-------------------
+| - How to use: $bg-imgs: map-set-bg-imgs($map, $index, $map-sizes)
+| - Generated classes: .bg-img-{size}
+|
+*/
+$bg-imgs: ();
+$bg-imgs: map-set-bg-imgs($bg-imgs, 'lg', 900px, (
+    'lg': 800px,
+    'md': 70vh,
+    'sm': 80vh,
+    'xs': 100vh
+));
+$bg-imgs: map-set-bg-imgs($bg-imgs, 'md', 750px, (
+    'lg': 600px,
+    'md': 50vh,
+    'sm': 50vh,
+    'xs': 80vh
+));

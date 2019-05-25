@@ -1,0 +1,134 @@
+<!doctype html>
+<html {{ site.language_attributes }}>
+    {#
+    |
+    | Head
+    |-------
+    #}
+    <head>
+        {% include '_layouts/_head.twig' %}
+    </head>
+    
+    {#
+    |
+    | Import macros
+    |----------------
+    #}
+    {% import '_macros/global.twig' as global %}
+    
+    {#
+    |
+    | Body
+    |-------
+    #}
+    <body class="{{ body_class }}">
+
+
+
+
+        {#
+        |
+        | Loader
+        |---------
+        #}
+        <div class="page-loader">
+
+            <div class="container">
+                <div class="ta-c">
+                    
+                    <div class="title-container">
+                        <p class="title-xl mb-0 first-line">— Chatterie —</p>
+                        <p class="title-xxl mb-md second-line">Midsummer Night</p>
+                    </div>
+
+                    <div class="line"></div>
+                    
+                </div>
+            </div>
+            
+        </div>
+
+
+
+        <div class="site-wrapper">
+
+            {#
+            |
+            | Header
+            |---------
+            #}
+            {% block header %}
+                {% include '_layouts/header.twig' %}
+            {% endblock %}
+
+            
+            <div id="site-container" class="v-section">
+
+
+                {#
+                |
+                | Content
+                |---------
+                #}            
+                {% block content %}{% endblock %}
+
+
+
+                {#
+                |
+                | Footer
+                |---------
+                #}
+                {% block footer %}
+                    {% include '_layouts/footer.twig' %}
+                {% endblock %}
+
+
+            </div>
+
+            
+
+            {#
+            |
+            | Cookie
+            |---------
+            #}
+            {% include '_includes/cookie.twig' %}
+
+        </div>
+
+        {#
+        |
+        | Debug Tool
+        |------------
+        #}
+        {% if debug %}
+            {% include '_debug-tool/debug-tool.twig' %}
+        {% endif %}
+
+
+        {#
+        |
+        | Javascripts
+        |--------------
+        #}
+        {% block javascripts %}
+            {% if google_map_api_key %}
+                <script src="https://maps.googleapis.com/maps/api/js?key={{ google_map_api_key }}"></script>
+            {% endif %}
+            
+            <script src="{{ dist }}/js/app.js"></script>
+
+            {% if debug %}
+                <script src="{{ dist }}/js/debug_tool.js"></script>
+            {% endif %}
+        {% endblock %}
+	     
+        {#
+        |
+        | WP Footer
+        |--------------
+        #}
+        {{ wp_footer }}
+    </body>
+</html>

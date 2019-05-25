@@ -1,0 +1,24 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+    <div id="page-news-single">
+    
+        {#
+        |
+        | Section Banner
+        |-----------------
+        #}
+        {{ global.banner({
+            'title': post.title,
+            'image': img ~ '/global/theme-lg.jpg'
+        }) }}
+
+        <section class="section">
+            <div class="container">
+                <p>{{ post.date }} par <a href="{{ post.author.link }}">{{ post.author }}</a></p>
+                <hr/>
+                <div>{{ post.content }}</div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

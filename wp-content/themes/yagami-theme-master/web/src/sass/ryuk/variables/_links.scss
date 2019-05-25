@@ -1,0 +1,30 @@
+/*
+|---------------------------------------------------------------
+| LINKS
+|---------------------------------------------------------------
+| Generate and assign links colors
+|
+|
+*/
+
+/*
+|
+| Links default
+|----------------
+|
+*/
+$default-link-color:            $dark-grey;
+$default-link-color-hover:      $dark-grey;
+
+
+/*
+|------------------------
+| Links colors creation
+|------------------------
+| - How to use: Add --> $links-colors: map-set-links($map, $index, $color, $color-hover)
+| - Generated classes: .link-{color} & .links-{color} (on parent)
+|
+*/
+$links-colors: ();
+$links-colors: map-set-links($links-colors, 'white', $white, $light-grey);
+$links-colors: map-set-links($links-colors, 'black', $black, $grey);
