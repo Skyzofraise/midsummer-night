@@ -69,6 +69,6 @@
         "scrollmagic": "^2.0.5",
         "smooth-scrollbar": "^8.2.7",
         "smooth-scrolling": "^2.3.11",
-        "swiper": "^4.0.7"
+        "swiper": "^6.5.1"
     }
 }
